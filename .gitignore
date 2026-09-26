@@ -1,0 +1,7 @@
+# 編譯產物（存檔時自動產生）
+webapp/WEB-INF/classes/
+
+# 下載的 JSTL 套件
+webapp/WEB-INF/lib/
+
+.DS_Store

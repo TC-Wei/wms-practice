@@ -1,0 +1,5 @@
+{
+  "java.project.sourcePaths": ["src"],
+  "java.project.outputPath": "webapp/WEB-INF/classes",
+  "java.project.referencedLibraries": ["/opt/homebrew/opt/tomcat/libexec/lib/servlet-api.jar"]
+}
