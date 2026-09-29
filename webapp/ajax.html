@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+
+  <body>
+    <button id="btn">查詢</button>
+    <p id="result"></p>
+    <script>
+      $("#btn").on("click", () => {
+        $.ajax({
+          url: "api/stock",
+          success: function (res) {
+            $("#result").text(`${res.code} : ${res.qty} 箱`);
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
