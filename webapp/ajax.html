@@ -8,14 +8,20 @@
   </head>
 
   <body>
+    <input id="code" />
     <button id="btn">查詢</button>
     <p id="result"></p>
     <script>
       $("#btn").on("click", () => {
         $.ajax({
           url: "api/stock",
+          data: { code: $("#code").val() },
           success: function (res) {
-            $("#result").text(`${res.code} : ${res.qty} 箱`);
+            if (res.qty === -1) {
+              $("#result").text(`${res.code} :查無此商品`);
+            } else {
+              $("#result").text(`${res.code} : ${res.qty} 箱`);
+            }
           },
         });
       });
