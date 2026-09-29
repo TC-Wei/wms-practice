@@ -12,7 +12,13 @@ public class ListServlet extends HttpServlet {
             throws ServletException, IOException {
         String[] codes = { "A001", "A002", "A003" };
         int[] qty = { 20, 0, 5 };
-        request.setAttribute("total", 25);
+        int total = 0;
+        for (int i = 0; i < qty.length; i++) {
+            total += qty[i];
+        }
+        String searchCode = request.getParameter("code");
+        request.setAttribute("keyword", searchCode);
+        request.setAttribute("total", total);
         request.setAttribute("codes", codes);
         request.setAttribute("qtys", qty);
 
