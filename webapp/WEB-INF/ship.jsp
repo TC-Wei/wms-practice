@@ -24,11 +24,11 @@ uri="jakarta.tags.core"%>
           <td><input type="checkbox" class="item" /></td>
           <td>${code}</td>
           <td>${names[s.index]}</td>
-          <td>${qty[s.index]}</td>
+          <td class="qty">${qty[s.index]}</td>
         </tr>
       </c:forEach>
     </table>
-    <p>總數量：${total}</p>
+    <p>總數量：<span class="total">${total}</span></p>
     <button id="deleteBtn">刪除勾選</button>
     <script>
     $("#itemAll").on("change",()=>{
@@ -37,7 +37,13 @@ uri="jakarta.tags.core"%>
     })
     $("#deleteBtn").on("click",()=>{
       $(".item:checked").closest("tr").remove()
+    let sum= 0
+    $(".qty").each(function(){
+      sum += Number($(this).text())
     })
+    $(".total").text(sum)
+  })
+    
     
   </script>
   </body>
