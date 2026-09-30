@@ -7,13 +7,14 @@ uri="jakarta.tags.core"%>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>出貨單</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
   <body>
       <p>出貨單號：${orderNo}</p>
       <p>客戶：${customer}</p>
     <table border="1">
       <tr>
-        <th><input type="checkbox" class="itemAll"/></th>
+        <th><input type="checkbox" id="itemAll"/></th>
         <th>料號</th>
         <th>品名</th>
         <th>數量</th>
@@ -28,5 +29,17 @@ uri="jakarta.tags.core"%>
       </c:forEach>
     </table>
     <p>總數量：${total}</p>
+    <button id="deleteBtn">刪除勾選</button>
+    <script>
+    $("#itemAll").on("change",()=>{
+      $(".item").prop('checked',$("#itemAll").prop('checked'))
+      
+    })
+    $("#deleteBtn").on("click",()=>{
+      $(".item:checked").closest("tr").remove()
+    })
+    
+  </script>
   </body>
+  
 </html>
