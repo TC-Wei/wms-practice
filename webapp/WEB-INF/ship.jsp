@@ -10,6 +10,7 @@ uri="jakarta.tags.core"%>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
   <body>
+      <h1>出貨單</h1>
       <p>出貨單號：${orderNo}</p>
       <p>客戶：${customer}</p>
     <table border="1">
