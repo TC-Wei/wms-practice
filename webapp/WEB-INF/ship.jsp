@@ -44,8 +44,6 @@ uri="jakarta.tags.core"%>
     })
     $(".total").text(sum)
   })
-    
-    
   </script>
   </body>
   
